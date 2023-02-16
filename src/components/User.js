@@ -1,16 +1,17 @@
 import { Component } from "react";
 
-export default class Users extends Component{
+export default class User extends Component{
 
     constructor(){
         super();
+
         this.state={
-            users : []
+            users: []
         }
     }
 
     componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
+         fetch('https://jsonplaceholder.typicode.com/users')
          .then(response=>response.json())
          .then(data=>{
              this.setState({
@@ -20,10 +21,10 @@ export default class Users extends Component{
     }
 
     render(){
-        return(
-            <div>
+        return (
+          <div>
             <h1>User List</h1>
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -43,8 +44,7 @@ export default class Users extends Component{
                 ))}
               </tbody>
             </table>
-            </div>
+          </div>
         );
     }
-
 }

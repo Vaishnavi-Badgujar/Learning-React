@@ -50,20 +50,20 @@ export default class Emp extends Component{
                     ))
                 }
                 <br /><br />
-                <button onClick={() => (this.sortArry('ASC'))}>Sort as per the Salary - ASC</button>
-                <button onClick={() => (this.sortArry('DESC'))}>Sort as per the Salary - DESC</button>
+                <button onClick={() => (this.sortSalary('ASC'))}>Sort as per the Salary - ASC</button>
+                <button onClick={() => (this.sortSalary('DESC'))}>Sort as per the Salary - DESC</button>
             </div>
         );
     }
 
-sortArry(direction){
+sortSalary(direction){
     let temp = [];
     switch(direction){
         case 'ASC':
-            temp = this.state.employees.salary.sort((a, b) => a - b);
+            temp = this.state.employees.sort((e1, e2) => e1.salary - e2.salary);
             break;
         case 'DESC':
-            temp = this.state.employees.Salary.sort((a, b) => b - a);
+            temp = this.state.employees.sort((e1, e2) => e2.salary - e1.salary);
             break;
         default:
             break;
